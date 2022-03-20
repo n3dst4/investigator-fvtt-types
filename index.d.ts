@@ -152,7 +152,7 @@ export type ThemeV1 = ThemeSeedV1 & {
   },
 }
 
-export type ThemeMakerV1 = (css: typeof css) => ThemeSeedV1;
+export type ThemeMakerV1 = (cssFn: typeof css) => ThemeSeedV1;
 
 type InvestigatorConfig = {
   themes: {
@@ -161,12 +161,11 @@ type InvestigatorConfig = {
   installTheme: (id: string, fn: ThemeMakerV1) => void,
 };
 
-export type css = typeof css;
+export type CssFn = typeof css;
 
 declare global {
   interface CONFIG {
     Investigator?: InvestigatorConfig;
   }
-
   const CONFIG: CONFIG;
 }
