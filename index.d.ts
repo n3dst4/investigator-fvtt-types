@@ -1,4 +1,4 @@
-import { CSSObject, SerializedStyles } from "@emotion/react";
+import { CSSObject, SerializedStyles, css } from "@emotion/react";
 
 export type ThemeSeedV1 = {
   schemaVersion: "v1",
@@ -152,13 +152,21 @@ export type ThemeV1 = ThemeSeedV1 & {
   },
 }
 
+export type ThemeMakerV1 = (css: typeof css) => ThemeSeedV1;
+
+type InvestigatorConfig = {
+  themes: {
+    [name: string]: ThemeV1,
+  },
+  installTheme: (id: string, fn: ThemeMakerV1) => void,
+};
+
+export type css = typeof css;
+
 declare global {
   interface CONFIG {
-    Investigator?: {
-      themes: {
-        [name: string]: ThemeV1,
-      },
-      themeFactory: (seed: ThemeSeedV1) => ThemeV1,
-    };
+    Investigator?: InvestigatorConfig;
   }
+
+  const CONFIG: CONFIG;
 }
