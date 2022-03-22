@@ -20,7 +20,7 @@ export type ThemeSeedV1 = {
    * (That `import` should have an @-sign in front of it but it messes with the 
    * comment syntax.)
    */
-  global?: SerializedStyles,
+  global?: SerializedStyles | string,
   /**
    * Will be applied to the root element of the themed area. This is a good
    * place to apply a wallpaper image. It is assumed that any window using this
@@ -164,16 +164,12 @@ export type ThemeV1 = ThemeSeedV1 & {
   },
 }
 
-export type ThemeMakerV1 = (cssFn: typeof css) => ThemeSeedV1;
-
 type InvestigatorConfig = {
   themes: {
     [name: string]: ThemeV1,
   },
-  installTheme: (id: string, fn: ThemeMakerV1) => void,
+  installTheme: (id: string, seed: ThemeSeedV1) => void,
 };
-
-export type CssFn = typeof css;
 
 declare global {
   // we redeclare CONFIG in global scope to add our bit. thanks to TS
