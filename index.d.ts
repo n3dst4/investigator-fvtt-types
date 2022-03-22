@@ -1,12 +1,24 @@
 import { CSSObject, SerializedStyles, css } from "@emotion/react";
 
+/**
+ * A theme definition for INVESTIGATOR
+ */
 export type ThemeSeedV1 = {
   schemaVersion: "v1",
   /** The name of the theme. Use puns and allusions liberally. */
   displayName: string,
   /**
    * CSS block which will be inserted at the top of the browser document. This
-   * is a good place for `@import` directives for loading fonts.
+   * is a good place for `@import` directives for loading fonts, e.g.
+   * 
+   * ```
+   * global: css`
+      import url('https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap');
+    `,
+   * ```
+   *
+   * (That `import` should have an @-sign in front of it but it messes with the 
+   * comment syntax.)
    */
   global?: SerializedStyles,
   /**
@@ -164,6 +176,8 @@ type InvestigatorConfig = {
 export type CssFn = typeof css;
 
 declare global {
+  // we redeclare CONFIG in global scope to add our bit. thanks to TS
+  // declaration merging, this is added to the main type.
   interface CONFIG {
     Investigator?: InvestigatorConfig;
   }
