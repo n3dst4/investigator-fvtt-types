@@ -167,5 +167,4 @@ declare global {
   interface CONFIG {
     Investigator?: InvestigatorConfig;
   }
-  const CONFIG: CONFIG;
 }
