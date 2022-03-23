@@ -4,7 +4,7 @@
   "description": "",
   "exports": {
     ".": {
-      "types": "./index.ts"
+      "types": "./index.d.ts"
     }
   },
   "scripts": {
