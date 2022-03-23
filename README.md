@@ -1,4 +1,4 @@
-# `@lumphammer/investigator-fvtt-types`
+# @lumphammer/investigator-fvtt-types
 
 This package contains TypeScript types for people wishing to write custom addons for [INVESTIGATOR for Foundry VTT][investigator].
 

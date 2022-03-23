@@ -11,7 +11,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Neil de Carteret <neil@lumphammer.net",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/n3dst4/investigator-fvtt-types"
+  },
+  "homepage": "https://gitlab.com/n3dst4/investigator-fvtt-types",
   "license": "ISC",
   "devDependencies": {
     "@league-of-foundry-developers/foundry-vtt-types": "^9.255.2",
