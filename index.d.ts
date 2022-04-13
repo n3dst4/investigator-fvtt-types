@@ -166,25 +166,77 @@ export type ThemeV1 = ThemeSeedV1 & {
 
 export interface PresetV1 {
   schemaVersion: "v1",
+  /** The name that this preset will appear as in the Foundry UI */
   displayName: string;
+  /**
+   * The id of the theme to use. If you are registering a custom theme, it
+   * should match the id you used.
+   */
   defaultTheme: string;
+  /**
+   * Categories for investigative abilities, e.g. "Academic", "Interpersonal"
+   */
   investigativeAbilityCategories: string[];
+  /**
+   * Categories for general abilities. For many systems, this will just be 
+   * "General".
+   */
   generalAbilityCategories: string[];
+  /**
+   * List of ability names that can be used in combat.
+   * This may be removed in future in favour or just flagging abilities as
+   * "combat usable".
+   */
   combatAbilities: string[];
+  /**
+   * What do we call the main, short descriptive text for a PC in this system?
+   */
   occupationLabel: string;
+  /**
+   * What short text fields do we need?
+   */
   shortNotes: string[];
+  /**
+   * What groups of notes to we need per character?
+   */
   longNotes: string[];
+  /**
+   * What compendium packs should be automatically added to new PCs
+   */
   newPCPacks: string[];
+  /**
+   * What compendium packs should be automatically added to new NPCs
+   */
   newNPCPacks: string[];
+  /**
+   * Can abilities be boosted in this system?
+   */
   useBoost: boolean;
+  /**
+   * Ignore this unless you are doing something based on the DERPG  system.
+   */
   useMwStyleAbilities: boolean;
+  /**
+   * Ignore this unless you are doing something based on the DERPG  system.
+   */
   mwHiddenShortNotes?: string[];
+  /**
+   * Ignore this unless you are doing something based on the DERPG  system.
+   */
   mwUseAlternativeItemTypes: boolean;
 }
 
-
+/**
+ * Type for the global CONFIG.Investigator
+ */
 interface InvestigatorConfig {
+  /**
+   * Install a theme.
+   */
   installTheme: (id: string, seed: ThemeSeedV1) => void,
+  /**
+   * Install a preset.
+   */
   installPreset: (id: string, preset: PresetV1) => void,
 };
 
