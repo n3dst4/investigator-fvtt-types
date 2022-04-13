@@ -164,12 +164,31 @@ export type ThemeV1 = ThemeSeedV1 & {
   },
 }
 
-type InvestigatorConfig = {
-  themes: {
-    [name: string]: ThemeV1,
-  },
+export interface PresetV1 {
+  schemaVersion: "v1",
+  displayName: string;
+  defaultTheme: string;
+  investigativeAbilityCategories: string[];
+  generalAbilityCategories: string[];
+  combatAbilities: string[];
+  occupationLabel: string;
+  shortNotes: string[];
+  longNotes: string[];
+  newPCPacks: string[];
+  newNPCPacks: string[];
+  useBoost: boolean;
+  useMwStyleAbilities: boolean;
+  mwHiddenShortNotes?: string[];
+  mwUseAlternativeItemTypes: boolean;
+}
+
+
+interface InvestigatorConfig {
   installTheme: (id: string, seed: ThemeSeedV1) => void,
+  installPreset: (id: string, preset: PresetV1) => void,
 };
+
+
 
 declare global {
   // we redeclare CONFIG in global scope to add our bit. thanks to TS
