@@ -3,10 +3,10 @@ import { CSSObject, SerializedStyles, css } from "@emotion/react";
 /**
  * A theme definition for INVESTIGATOR
  */
-export type ThemeSeedV1 = {
-  schemaVersion: "v1",
+export interface ThemeSeedV1 {
+  schemaVersion: "v1";
   /** The name of the theme. Use puns and allusions liberally. */
-  displayName: string,
+  displayName: string;
   /**
    * CSS block which will be inserted at the top of the browser document. This
    * is a good place for `@import` directives for loading fonts, e.g.
@@ -20,14 +20,14 @@ export type ThemeSeedV1 = {
    * (That `import` should have an @-sign in front of it but it messes with the 
    * comment syntax.)
    */
-  global?: SerializedStyles | string,
+  global?: SerializedStyles | string;
   /**
    * Will be applied to the root element of the themed area. This is a good
    * place to apply a wallpaper image. It is assumed that any window using this
    * style will always layer `backgroundPrimary` or `backgroundSecondary` over
    * it before adding text.
    */
-  largeSheetRootStyle: CSSObject,
+  largeSheetRootStyle: CSSObject;
   /**
    * Will be applied to the root element of the themed area. This is a good
    * place to apply a wallpaper image. Unlike `largeSheetRootStyle`, text might
@@ -35,20 +35,23 @@ export type ThemeSeedV1 = {
    * the background to make it directly usable.
    * @default largeSheetRootStyle
    */
-  smallSheetRootStyle?: CSSObject,
+  smallSheetRootStyle?: CSSObject;
   /**
    * If defined, these styles will be added to the app window for any <CSSReset>
    * unless `noStyleAppWindow` is given.
    */
-  appWindowStyle?: CSSObject,
+  appWindowStyle?: CSSObject;
+  tabActiveStyle?: CSSObject;
+  tabInactiveStyle?: CSSObject;
+  panelStyle?:CSSObject;
   /**
    * Font string for block text.
    */
-  bodyFont?: string,
+  bodyFont?: string;
   /**
    * Font string for title or label text.
    */
-  displayFont?: string,
+  displayFont?: string;
   /**
    * Styles for the fancy character sheet logo. See the LogoEditable component
    * for details.
@@ -59,30 +62,30 @@ export type ThemeSeedV1 = {
      * character sheet logo. The default is 14,
      * @default 14
      */
-    fontScaleFactor?: number,
+    fontScaleFactor?: number;
     /**
      * These styles will be applied to the front text element, so you can do the
      * `background-clip: text; color: transparent;` trick to get gradient (or
      * other image) text.
      */
-    frontTextElementStyle: CSSObject,
+    frontTextElementStyle: CSSObject;
     /**
      * These styles will be applied to the rear text element. This is a good
      * place to add drop shadows because if you put them on the front element
      * while doing the `background-clip: text; color: transparent;` trick the
      * shadow will show through the text 🥺
      */
-    rearTextElementStyle: CSSObject,
+    rearTextElementStyle: CSSObject;
     /**
      * These styles will be applied to both text elements at once (actually to a
      * wrapper around them. This is a good place to apply `transform`s.
      */
-    textElementsStyle: CSSObject,
+    textElementsStyle: CSSObject;
     /**
      * These styles will be applied to the otherwise-empty div that goes behind
      * the text elements.
      */
-    backdropStyle: CSSObject,
+    backdropStyle: CSSObject;
   },
 
   /**
@@ -92,40 +95,40 @@ export type ThemeSeedV1 = {
     /**
      * callout color for clickable text and other "hot" items
      */
-    accent: string,
+    accent: string;
     /**
      * when `accent is used as a background, this color should work as text over
      * it
      */
-    accentContrast: string,
+    accentContrast: string;
     /**
      * used for hover effect on hot items
      */
-    glow: string,
+    glow: string;
     /**
      * tinting color used to indicate danger. Should be given as a bold, opaque
      * color, but will be blended in use.
      * @default red
      */
-    danger?: string,
+    danger?: string;
     /**
      * flat color to stand in as the background before images have loaded
      */
-    wallpaper: string,
+    wallpaper: string;
     /**
      * basic non-interactive text color
      */
-    text: string,
+    text: string;
     /**
      * background for buttons
      */
-    backgroundButton: string,
+    backgroundButton: string;
     /**
      * The contract for this color is: if you layer this color over the
      * `rootElementStyle` or the `wallpaper` color, you will get a surface which
      * can be used for text in either the `text` or `accent` colors.
      */
-    backgroundPrimary: string,
+    backgroundPrimary: string;
 
     /**
      * The contract for this color is
@@ -135,19 +138,22 @@ export type ThemeSeedV1 = {
      * secondary panel
      * @see {@link backgroundPrimary}
      */
-    backgroundSecondary: string,
+    backgroundSecondary: string;
 
     /**
      * Color used to outline controls
      * @default text
      */
-    controlBorder?: string,
+    controlBorder?: string;
 
   },
 }
 
-export type ThemeV1 = ThemeSeedV1 & {
-  smallSheetRootStyle: CSSObject,
+export interface ThemeV1 extends ThemeSeedV1 {
+  smallSheetRootStyle: CSSObject;
+  tabActiveStyle: CSSObject;
+  tabInactiveStyle: CSSObject;
+  panelStyle:CSSObject;
 
   colors: ThemeSeedV1["colors"] & {
     bgOpaquePrimary: string,
@@ -157,11 +163,11 @@ export type ThemeV1 = ThemeSeedV1 & {
     bgOpaqueDangerPrimary: string,
     bgOpaqueDangerSecondary: string,
     controlBorder: string,
-  },
+  };
 
   logo: ThemeSeedV1["logo"] & {
     fontScaleFactor: number,
-  },
+  };
 }
 
 export interface PresetV1 {
