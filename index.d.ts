@@ -1,6 +1,66 @@
 import { CSSObject, SerializedStyles, css } from "@emotion/react";
 
 /**
+ * Essential colors for a theme. Some are typed as optional. If these are left
+ * out they will be inferred from the others.
+ */
+export interface SeedColorsV1 {
+  /**
+   * callout color for clickable text and other "hot" items
+   */
+  accent: string;
+  /**
+   * when `accent is used as a background, this color should work as text over
+   * it
+   */
+  accentContrast: string;
+  /**
+   * used for hover effect on hot items
+   */
+  glow: string;
+  /**
+   * tinting color used to indicate danger. Should be given as a bold, opaque
+   * color, but will be blended in use.
+   * @default red
+   */
+  danger?: string;
+  /**
+   * flat color to stand in as the background before images have loaded
+   */
+  wallpaper: string;
+  /**
+   * basic non-interactive text color
+   */
+  text: string;
+  /**
+   * background for buttons
+   */
+  backgroundButton: string;
+  /**
+   * The contract for this color is: if you layer this color over the
+   * `rootElementStyle` or the `wallpaper` color, you will get a surface which
+   * can be used for text in either the `text` or `accent` colors.
+   */
+  backgroundPrimary: string;
+
+  /**
+   * The contract for this color is
+   * 1. the same as backgroundPrimary but should look less prominent (will be
+   * used for inactive tabs)
+   * 2. can also be layered *on top of* backgroundPrimary to create a
+   * secondary panel
+   * @see {@link backgroundPrimary}
+   */
+  backgroundSecondary: string;
+
+  /**
+   * Color used to outline controls
+   * @default text
+   */
+  controlBorder?: string;
+}
+
+/**
  * A theme definition for INVESTIGATOR
  */
 export interface ThemeSeedV1 {
@@ -41,9 +101,13 @@ export interface ThemeSeedV1 {
    * unless `noStyleAppWindow` is given.
    */
   appWindowStyle?: CSSObject;
+
   tabActiveStyle?: CSSObject;
-  tabInactiveStyle?: CSSObject;
-  panelStyle?:CSSObject;
+  tabStyle?: CSSObject;
+  panelStylePrimary?: CSSObject;
+  panelStyleSecondary?: CSSObject;
+  
+  
   /**
    * Font string for block text.
    */
@@ -91,69 +155,15 @@ export interface ThemeSeedV1 {
   /**
    * All the values in this collection should be parseable as CSS colors
    */
-  colors: {
-    /**
-     * callout color for clickable text and other "hot" items
-     */
-    accent: string;
-    /**
-     * when `accent is used as a background, this color should work as text over
-     * it
-     */
-    accentContrast: string;
-    /**
-     * used for hover effect on hot items
-     */
-    glow: string;
-    /**
-     * tinting color used to indicate danger. Should be given as a bold, opaque
-     * color, but will be blended in use.
-     * @default red
-     */
-    danger?: string;
-    /**
-     * flat color to stand in as the background before images have loaded
-     */
-    wallpaper: string;
-    /**
-     * basic non-interactive text color
-     */
-    text: string;
-    /**
-     * background for buttons
-     */
-    backgroundButton: string;
-    /**
-     * The contract for this color is: if you layer this color over the
-     * `rootElementStyle` or the `wallpaper` color, you will get a surface which
-     * can be used for text in either the `text` or `accent` colors.
-     */
-    backgroundPrimary: string;
-
-    /**
-     * The contract for this color is
-     * 1. the same as backgroundPrimary but should look less prominent (will be
-     * used for inactive tabs)
-     * 2. can also be layered *on top of* backgroundPrimary to create a
-     * secondary panel
-     * @see {@link backgroundPrimary}
-     */
-    backgroundSecondary: string;
-
-    /**
-     * Color used to outline controls
-     * @default text
-     */
-    controlBorder?: string;
-
-  },
+  colors: SeedColorsV1,
 }
 
 export interface ThemeV1 extends ThemeSeedV1 {
   smallSheetRootStyle: CSSObject;
   tabActiveStyle: CSSObject;
-  tabInactiveStyle: CSSObject;
-  panelStyle:CSSObject;
+  tabStyle: CSSObject;
+  panelStylePrimary:CSSObject;
+  panelStyleSecondary: CSSObject;
 
   colors: ThemeSeedV1["colors"] & {
     bgOpaquePrimary: string,
