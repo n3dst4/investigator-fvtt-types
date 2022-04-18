@@ -231,6 +231,19 @@ export interface PresetV1 {
    */
   useBoost: boolean;
   /**
+   * What string to use when a PC's occupation is empty
+   * Defaults to "Investigator"
+   */
+  genericOccupation?: string;
+  /**
+   * Should empty investigative categories be shown? Default is yes, because
+   * in most GUMSHOE games, characters will have a smattering of abuilities
+   * across all the categories. But in some, the categories represent
+   * professional specialisations and you don't want to see e.g. Warrior
+   * abilities on your Sorceror sheet.
+   */
+  showEmptyInvestigativeCategories?: boolean;
+  /**
    * Ignore this unless you are doing something based on the DERPG  system.
    */
   useMwStyleAbilities: boolean;
