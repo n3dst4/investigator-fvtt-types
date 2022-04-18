@@ -1,5 +1,5 @@
 import { CSSObject, SerializedStyles, css } from "@emotion/react";
-
+export {CSSObject} from "@emotion/react";
 /**
  * Essential colors for a theme. Some are typed as optional. If these are left
  * out they will be inferred from the others.
@@ -103,7 +103,9 @@ export interface ThemeSeedV1 {
   appWindowStyle?: CSSObject;
 
   tabActiveStyle?: CSSObject;
+  tabClass?: string;
   tabStyle?: CSSObject;
+  panelClass?: string;
   panelStylePrimary?: CSSObject;
   panelStyleSecondary?: CSSObject;
   
