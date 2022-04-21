@@ -234,7 +234,7 @@ export interface PresetV1 {
    * What string to use when a PC's occupation is empty
    * Defaults to "Investigator"
    */
-  genericOccupation?: string;
+  genericOccupation: string;
   /**
    * Should empty investigative categories be shown? Default is yes, because
    * in most GUMSHOE games, characters will have a smattering of abuilities
