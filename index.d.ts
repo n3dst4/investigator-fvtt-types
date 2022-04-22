@@ -190,7 +190,7 @@ export interface PresetV1 {
    * The id of the theme to use. If you are registering a custom theme, it
    * should match the id you used.
    */
-  defaultTheme: string;
+  defaultThemeName: string;
   /**
    * Categories for investigative abilities, e.g. "Academic", "Interpersonal"
    */
@@ -255,6 +255,10 @@ export interface PresetV1 {
    * Ignore this unless you are doing something based on the DERPG  system.
    */
   mwUseAlternativeItemTypes: boolean;
+  /**
+   * Ignore this unless you are doing something based on the DERPG  system.
+   */
+  useMwInjuryStatus: boolean;
 }
 
 /**
