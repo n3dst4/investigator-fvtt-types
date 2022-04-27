@@ -182,6 +182,13 @@ export interface ThemeV1 extends ThemeSeedV1 {
   };
 }
 
+export interface Stat {
+  min?: number;
+  max?: number;
+  default: number;
+  name: string;
+}
+
 export interface PresetV1 {
   schemaVersion: "v1",
   /** The name that this preset will appear as in the Foundry UI */
@@ -259,6 +266,22 @@ export interface PresetV1 {
    * Ignore this unless you are doing something based on the DERPG  system.
    */
   useMwInjuryStatus: boolean;
+  /**
+   * Show the "hit theshold" counter on the character sheet
+   */
+  useHitThreshold?: boolean;
+  /**
+   * What stats should PCs have?
+   */
+  pcStats: Record<string, Stat>;
+  /**
+   * What stats should NPCs have?
+   */
+  npcStats: Record<string, Stat>;
+  /**
+   * Do NPCs get fix bonuses on combat abilities?
+   */
+  useNpcCombatBonuses?: boolean;
 }
 
 /**
