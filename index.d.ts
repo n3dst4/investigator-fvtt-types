@@ -97,16 +97,33 @@ export interface ThemeSeedV1 {
    */
   smallSheetRootStyle?: CSSObject;
   /**
-   * If defined, these styles will be added to the app window for any <CSSReset>
+   * These styles will be added to the app window for any <CSSReset>
    * unless `noStyleAppWindow` is given.
    */
   appWindowStyle?: CSSObject;
-
+  /**
+   * Will be applied to active tabs
+   */
   tabActiveStyle?: CSSObject;
+  /**
+   * Classname to be added to active tabs
+   */
   tabClass?: string;
+  /**
+   * Base style for tabs
+   */
   tabStyle?: CSSObject;
+  /**
+   * Classname that will be applied to all panels
+   */
   panelClass?: string;
+  /**
+   * Styles for primary panels
+   */
   panelStylePrimary?: CSSObject;
+  /**
+   * Styles for secondary panels
+   */
   panelStyleSecondary?: CSSObject;
   
   
