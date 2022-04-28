@@ -160,28 +160,9 @@ export interface ThemeSeedV1 {
   colors: SeedColorsV1,
 }
 
-export interface ThemeV1 extends ThemeSeedV1 {
-  smallSheetRootStyle: CSSObject;
-  tabActiveStyle: CSSObject;
-  tabStyle: CSSObject;
-  panelStylePrimary:CSSObject;
-  panelStyleSecondary: CSSObject;
-
-  colors: ThemeSeedV1["colors"] & {
-    bgOpaquePrimary: string,
-    bgOpaqueSecondary: string,
-    bgTransDangerPrimary: string,
-    bgTransDangerSecondary: string,
-    bgOpaqueDangerPrimary: string,
-    bgOpaqueDangerSecondary: string,
-    controlBorder: string,
-  };
-
-  logo: ThemeSeedV1["logo"] & {
-    fontScaleFactor: number,
-  };
-}
-
+/**
+ * A definition for a countable value that all PCs or NPCs will have
+ */
 export interface Stat {
   min?: number;
   max?: number;
