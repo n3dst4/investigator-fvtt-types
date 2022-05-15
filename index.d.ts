@@ -280,6 +280,10 @@ export interface PresetV1 {
    * Do NPCs get fix bonuses on combat abilities?
    */
   useNpcCombatBonuses?: boolean;
+  /**
+   * Use turn-passing initiative, AKA popcorn or lancer-style.
+   */
+  useTurnPassingInitiative?: boolean;
 }
 
 /**
