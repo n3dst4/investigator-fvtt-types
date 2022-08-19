@@ -1,5 +1,5 @@
-import { CSSObject, SerializedStyles, css } from "@emotion/react";
-export {CSSObject} from "@emotion/react";
+import { CSSObject, SerializedStyles } from "@emotion/react";
+export { CSSObject } from "@emotion/react";
 /**
  * Essential colors for a theme. Some are typed as optional. If these are left
  * out they will be inferred from the others.
@@ -298,11 +298,10 @@ interface InvestigatorConfig {
    * Install a preset.
    */
   installPreset: (id: string, preset: PresetV1) => void,
-};
-
-
+}
 
 declare global {
+
   // we redeclare CONFIG in global scope to add our bit. thanks to TS
   // declaration merging, this is added to the main type.
   interface CONFIG {

@@ -4,5 +4,9 @@
     "types": [
       "@league-of-foundry-developers/foundry-vtt-types"
     ],
-  }
+    // @tsconfig/recommended disables this 🤯
+    // https://www.typescriptlang.org/tsconfig#skipLibCheck
+    "skipLibCheck": false
+  },
+  "include": ["./index.d.ts"],
 }
