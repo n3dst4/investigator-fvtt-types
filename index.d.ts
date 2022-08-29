@@ -284,6 +284,10 @@ export interface PresetV1 {
    * Use turn-passing initiative, AKA popcorn or lancer-style.
    */
   useTurnPassingInitiative?: boolean;
+  /**
+   * What standard categories do we have for equipment?
+   */
+  equipmentCategories?: string[];
 }
 
 /**
