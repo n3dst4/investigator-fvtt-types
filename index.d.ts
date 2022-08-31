@@ -187,6 +187,27 @@ export interface Stat {
   name: string;
 }
 
+
+export type EquipmentFieldMetadata = {
+  name: string;
+} & ({
+  type: "string",
+  default: string;
+} | {
+  type: "number"
+  default: number;
+  min?: number;
+  max?: number;
+} | {
+  type: "checkbox",
+  default: boolean;
+})
+
+export interface EquipmentCategory {
+  name: string;
+  fields?: EquipmentFieldMetadata[];
+}
+
 export interface PresetV1 {
   schemaVersion: "v1",
   /** The name that this preset will appear as in the Foundry UI */
@@ -287,7 +308,7 @@ export interface PresetV1 {
   /**
    * What standard categories do we have for equipment?
    */
-  equipmentCategories?: string[];
+  equipmentCategories?: EquipmentCategory[];
 }
 
 /**
