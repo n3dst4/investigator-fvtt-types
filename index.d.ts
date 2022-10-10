@@ -205,7 +205,7 @@ export type EquipmentFieldMetadata = {
 
 export interface EquipmentCategory {
   name: string;
-  fields?: EquipmentFieldMetadata[];
+  fields?: Record<string, EquipmentFieldMetadata>;
 }
 
 export interface PresetV1 {
@@ -308,7 +308,7 @@ export interface PresetV1 {
   /**
    * What standard categories do we have for equipment?
    */
-  equipmentCategories?: EquipmentCategory[];
+  equipmentCategories?: Record<string, EquipmentCategory>;
 }
 
 /**
