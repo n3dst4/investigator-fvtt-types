@@ -9,7 +9,7 @@ Currently this includes types for
 
 ## Release process
 
-1. Make sure everything is commited.
+1. Make sure everything is committed.
 2. `npm version {major,minor,patch}`.
 3. `git push`.
 4. `npm publish`.
