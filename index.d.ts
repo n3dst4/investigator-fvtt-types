@@ -205,7 +205,7 @@ export type EquipmentFieldMetadata = {
 
 export interface EquipmentCategory {
   name: string;
-  fields?: Record<string, EquipmentFieldMetadata>;
+  fields: Record<string, EquipmentFieldMetadata>;
 }
 
 export interface PresetV1 {
