@@ -125,8 +125,7 @@ export interface ThemeSeedV1 {
    * Styles for secondary panels
    */
   panelStyleSecondary?: CSSObject;
-  
-  
+
   /**
    * Font string for block text.
    */
@@ -169,12 +168,12 @@ export interface ThemeSeedV1 {
      * the text elements.
      */
     backdropStyle: CSSObject;
-  },
+  };
 
   /**
    * All the values in this collection should be parseable as CSS colors
    */
-  colors: SeedColorsV1,
+  colors: SeedColorsV1;
 }
 
 /**
@@ -187,21 +186,24 @@ export interface Stat {
   name: string;
 }
 
-
 export type EquipmentFieldMetadata = {
   name: string;
-} & ({
-  type: "string",
-  default: string;
-} | {
-  type: "number"
-  default: number;
-  min?: number;
-  max?: number;
-} | {
-  type: "checkbox",
-  default: boolean;
-})
+} & (
+  | {
+      type: "string";
+      default: string;
+    }
+  | {
+      type: "number";
+      default: number;
+      min?: number;
+      max?: number;
+    }
+  | {
+      type: "checkbox";
+      default: boolean;
+    }
+);
 
 export interface EquipmentCategory {
   name: string;
@@ -209,7 +211,7 @@ export interface EquipmentCategory {
 }
 
 export interface PresetV1 {
-  schemaVersion: "v1",
+  schemaVersion: "v1";
   /** The name that this preset will appear as in the Foundry UI */
   displayName: string;
   /**
@@ -222,7 +224,7 @@ export interface PresetV1 {
    */
   investigativeAbilityCategories: string[];
   /**
-   * Categories for general abilities. For many systems, this will just be 
+   * Categories for general abilities. For many systems, this will just be
    * "General".
    */
   generalAbilityCategories: string[];
@@ -322,15 +324,14 @@ interface InvestigatorConfig {
   /**
    * Install a theme.
    */
-  installTheme: (id: string, seed: ThemeSeedV1) => void,
+  installTheme: (id: string, seed: ThemeSeedV1) => void;
   /**
    * Install a preset.
    */
-  installPreset: (id: string, preset: PresetV1) => void,
+  installPreset: (id: string, preset: PresetV1) => void;
 }
 
 declare global {
-
   // we redeclare CONFIG in global scope to add our bit. thanks to TS
   // declaration merging, this is added to the main type.
   interface CONFIG {
