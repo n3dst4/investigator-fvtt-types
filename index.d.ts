@@ -241,6 +241,10 @@ export interface PresetV1 {
    */
   shortNotes: string[];
   /**
+   * Should we show each of the short notes as text fields?
+   */
+  shortNotesAsText?: boolean[];
+  /**
    * What groups of notes to we need per character?
    */
   longNotes: string[];
