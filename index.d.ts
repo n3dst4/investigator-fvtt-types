@@ -255,7 +255,7 @@ export interface PresetV1 {
   /**
    * Can abilities be boosted in this system?
    */
-  useBoost: boolean;
+  useBoost?: boolean;
   /**
    * What string to use when a PC's occupation is empty
    * Defaults to "Investigator"
@@ -272,7 +272,7 @@ export interface PresetV1 {
   /**
    * Ignore this unless you are doing something based on the DERPG  system.
    */
-  useMwStyleAbilities: boolean;
+  useMwStyleAbilities?: boolean;
   /**
    * Ignore this unless you are doing something based on the DERPG  system.
    */
@@ -280,11 +280,11 @@ export interface PresetV1 {
   /**
    * Ignore this unless you are doing something based on the DERPG  system.
    */
-  mwUseAlternativeItemTypes: boolean;
+  mwUseAlternativeItemTypes?: boolean;
   /**
    * Ignore this unless you are doing something based on the DERPG  system.
    */
-  useMwInjuryStatus: boolean;
+  useMwInjuryStatus?: boolean;
   /**
    * Show the "hit theshold" counter on the character sheet
    */
