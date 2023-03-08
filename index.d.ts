@@ -210,6 +210,13 @@ export interface EquipmentCategory {
   fields: Record<string, EquipmentFieldMetadata>;
 }
 
+export type PersonalDetailType = "text" | "item";
+
+export interface PersonalDetail {
+  name: string;
+  type: PersonalDetailType;
+}
+
 export interface PresetV1 {
   schemaVersion: "v1";
   /** The name that this preset will appear as in the Foundry UI */
@@ -239,13 +246,10 @@ export interface PresetV1 {
    */
   occupationLabel: string;
   /**
-   * What short text fields do we need?
+   * What personalDetails do we need?
+   * This replaces the old shortNotes config.
    */
-  shortNotes: string[];
-  /**
-   * Should we show each of the short notes as text fields?
-   */
-  shortNotesAsText?: boolean[];
+  personalDetails?: PersonalDetail[];
   /**
    * What groups of notes to we need per character?
    */
