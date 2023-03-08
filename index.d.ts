@@ -245,7 +245,6 @@ export interface PresetV1 {
    * What do we call the main, short descriptive text for a PC in this system?
    */
   occupationLabel: string;
-
   /**
    * What personalDetails do we need?
    * This replaces the old shortNotes config.
