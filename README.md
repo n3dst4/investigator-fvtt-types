@@ -1,7 +1,5 @@
 # @lumphammer/investigator-fvtt-types
 
-> THIS REPOSITORY HAS MOVED! PLEASE COME AND FIND IT AT https://github.com/n3dst4/investigator-fvtt-types
-
 This package contains TypeScript types for people wishing to write custom addons for [INVESTIGATOR for Foundry VTT][investigator].
 
 Currently this includes types for
