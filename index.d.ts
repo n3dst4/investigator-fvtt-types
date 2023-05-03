@@ -70,14 +70,14 @@ export interface ThemeSeedV1 {
   /**
    * CSS block which will be inserted at the top of the browser document. This
    * is a good place for `@import` directives for loading fonts, e.g.
-   * 
+   *
    * ```
    * global: css`
       import url('https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap');
     `,
    * ```
    *
-   * (That `import` should have an @-sign in front of it but it messes with the 
+   * (That `import` should have an @-sign in front of it but it messes with the
    * comment syntax.)
    */
   global?: SerializedStyles | string;
@@ -295,10 +295,6 @@ export interface PresetV1 {
    * Ignore this unless you are doing something based on the DERPG  system.
    */
   useMwInjuryStatus?: boolean;
-  /**
-   * Show the "hit theshold" counter on the character sheet
-   */
-  useHitThreshold?: boolean;
   /**
    * What stats should PCs have?
    */
