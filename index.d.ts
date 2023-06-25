@@ -146,11 +146,17 @@ export interface ThemeSeedV1 {
      */
     fontScaleFactor?: number;
     /**
-     * These styles will be applied to the front text element, so you can do the
-     * `background-clip: text; color: transparent;` trick to get gradient (or
-     * other image) text.
+     * These styles will be applied individually to the front text elements, so
+     * you can do the `background-clip: text; color: transparent;` trick to get
+     * gradient (or other image) text.
      */
     frontTextElementStyle: CSSObject;
+    /**
+     * These styles will be applied to the div that wraps both front text
+     * elements. This is a place to apply styles which need to "encompass" both
+     * elements, e.g. a border.
+     */
+    frontTextElementWrapperStyle?: CSSObject;
     /**
      * These styles will be applied to the rear text element. This is a good
      * place to add drop shadows because if you put them on the front element
@@ -158,6 +164,12 @@ export interface ThemeSeedV1 {
      * shadow will show through the text 🥺
      */
     rearTextElementStyle: CSSObject;
+    /**
+     * These styles will be applied to the div that wraps both rear text
+     * elements. This is a place to apply styles which need to "encompass" both
+     * elements, e.g. a border.
+     */
+    rearTextElementWrapperStyle?: CSSObject;
     /**
      * These styles will be applied to both text elements at once (actually to a
      * wrapper around them. This is a good place to apply `transform`s.
