@@ -186,6 +186,13 @@ export interface ThemeSeedV1 {
    * All the values in this collection should be parseable as CSS colors
    */
   colors: SeedColorsV1;
+
+  notesStyles?: {
+    scopingContainer?: string;
+    pcNote?: string;
+    npcNote?: string;
+    itemNote?: string;
+  };
 }
 
 /**
