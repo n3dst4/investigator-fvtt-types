@@ -187,7 +187,7 @@ export interface ThemeSeedV1 {
    */
   colors: SeedColorsV1;
 
-  notesStyles?: {
+  notesCssClasses?: {
     scopingContainer?: string;
     pcNote?: string;
     npcNote?: string;
