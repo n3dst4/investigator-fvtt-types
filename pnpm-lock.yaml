@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@emotion/react':
     specifier: ^11.8.2
@@ -13,8 +17,8 @@ devDependencies:
     specifier: ^1.0.1
     version: 1.0.1
   typescript:
-    specifier: ^4.6.2
-    version: 4.6.2
+    specifier: ^5.4.4
+    version: 5.4.4
 
 packages:
 
@@ -940,9 +944,9 @@ packages:
     engines: {node: '>=4'}
     dev: false
 
-  /typescript@4.6.2:
-    resolution: {integrity: sha512-HM/hFigTBHZhLXshn9sN37H085+hQGeJHJ/X7LpBWLID/fbc2acUMfU+lGD98X81sKP+pFa9f0DZmCwB9GnbAg==}
-    engines: {node: '>=4.2.0'}
+  /typescript@5.4.4:
+    resolution: {integrity: sha512-dGE2Vv8cpVvw28v8HCPqyb08EzbBURxDpuhJvTrusShUfGnhHBafDsLdS1EhhxyL6BJQE+2cT3dDPAv+MQ6oLw==}
+    engines: {node: '>=14.17'}
     hasBin: true
     dev: true
 
