@@ -8,7 +8,11 @@
     }
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tsc",
+    "lint:check": "eslint ./*.ts",
+    "lint:fix": "eslint ./*.ts --fix",
+    "format:check": "prettier --check ./*.ts",
+    "format:fix": "prettier --write ./*.ts"
   },
   "keywords": [],
   "author": "Neil de Carteret <neil@lumphammer.net",
@@ -19,11 +23,19 @@
   "homepage": "https://gitlab.com/n3dst4/investigator-fvtt-types",
   "license": "ISC",
   "devDependencies": {
-    "@league-of-foundry-developers/foundry-vtt-types": "^9.255.2",
+    "@emotion/react": "^11.11.4",
+    "@league-of-foundry-developers/foundry-vtt-types": "^9.280.0",
     "@tsconfig/recommended": "^1.0.1",
-    "typescript": "^4.6.2"
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.4"
   },
   "dependencies": {
-    "@emotion/react": "^11.8.2"
+    "@lumphammer/shared-fvtt-bits": "file:shared-fvtt-bits"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "tinymce@5.10.1": "shared-fvtt-bits/patches/tinymce@5.10.1.patch",
+      "@league-of-foundry-developers/foundry-vtt-types@9.280.0": "shared-fvtt-bits/patches/@league-of-foundry-developers__foundry-vtt-types@9.280.0.patch"
+    }
   }
 }
