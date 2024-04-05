@@ -8,7 +8,11 @@
     }
   },
   "scripts": {
-    "test": "tsc"
+    "test": "tsc",
+    "lint:check": "eslint ./*.ts",
+    "lint:fix": "eslint ./*.ts --fix",
+    "format:check": "prettier --check ./*.ts",
+    "format:fix": "prettier --write ./*.ts"
   },
   "keywords": [],
   "author": "Neil de Carteret <neil@lumphammer.net",
@@ -19,12 +23,13 @@
   "homepage": "https://gitlab.com/n3dst4/investigator-fvtt-types",
   "license": "ISC",
   "devDependencies": {
+    "@emotion/react": "^11.11.4",
     "@league-of-foundry-developers/foundry-vtt-types": "^9.280.0",
     "@tsconfig/recommended": "^1.0.1",
+    "prettier": "^3.2.5",
     "typescript": "^5.4.4"
   },
   "dependencies": {
-    "@emotion/react": "^11.8.2",
     "@lumphammer/shared-fvtt-bits": "file:shared-fvtt-bits"
   },
   "pnpm": {
