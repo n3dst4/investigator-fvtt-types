@@ -4,8 +4,8 @@ on:
   push
 
 jobs:
-  build:
-    name: Build
+  checks:
+    name: Checks
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4
