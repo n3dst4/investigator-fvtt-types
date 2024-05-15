@@ -30,7 +30,7 @@
     "typescript": "^5.4.4"
   },
   "dependencies": {
-    "@lumphammer/shared-fvtt-bits": "file:shared-fvtt-bits"
+    "@lumphammer/shared-fvtt-bits": "file:./shared-fvtt-bits"
   },
   "pnpm": {
     "patchedDependencies": {
