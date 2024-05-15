@@ -102,10 +102,6 @@ export interface ThemeSeedV1 {
    */
   appWindowStyle?: CSSObject;
   /**
-   * Will be applied to active tabs
-   */
-  tabActiveStyle?: CSSObject;
-  /**
    * Classname to be added to active tabs
    */
   tabClass?: string;
@@ -113,6 +109,19 @@ export interface ThemeSeedV1 {
    * Base style for tabs
    */
   tabStyle?: CSSObject;
+  /**
+   * Will be applied to active tabs
+   */
+  tabActiveStyle?: CSSObject;
+  /**
+   * Object placed between tabs. This is a good place to add a border for the
+   * "top" of the content container
+   */
+  tabSpacerStyle?: CSSObject;
+  /**
+   * Styles for the main content area of a tab
+   */
+  tabContentStyle?: CSSObject;
   /**
    * Classname that will be applied to all panels
    */
@@ -125,7 +134,6 @@ export interface ThemeSeedV1 {
    * Styles for secondary panels
    */
   panelStyleSecondary?: CSSObject;
-
   /**
    * Font string for block text.
    */
