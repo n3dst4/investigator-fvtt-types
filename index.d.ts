@@ -342,6 +342,14 @@ export interface PresetV1 {
    * What standard categories do we have for equipment?
    */
   equipmentCategories?: Record<string, EquipmentCategory>;
+  /**
+   * Should we use cards?
+   */
+  useCards?: boolean;
+  /**
+   * What categories do we have for cards?
+   */
+  cardCategories?: CardCategory[];
 }
 
 /**
@@ -356,6 +364,14 @@ interface InvestigatorConfig {
    * Install a preset.
    */
   installPreset: (id: string, preset: PresetV1) => void;
+}
+
+export interface HasId {
+  id: string;
+}
+
+export interface CardCategory extends HasId {
+  name: string;
 }
 
 declare global {
