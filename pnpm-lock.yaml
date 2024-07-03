@@ -15,10 +15,6 @@ patchedDependencies:
 importers:
 
   .:
-    dependencies:
-      '@lumphammer/shared-fvtt-bits':
-        specifier: workspace:*
-        version: link:packages/shared-fvtt-bits
     devDependencies:
       '@emotion/react':
         specifier: ^11.11.4
@@ -26,6 +22,9 @@ importers:
       '@league-of-foundry-developers/foundry-vtt-types':
         specifier: ^9.280.0
         version: 9.280.0(patch_hash=qespnwvtxzqk7sn4hr4fiyfwwe)(@pixi/constants@6.5.10)(@pixi/core@6.5.10(@pixi/constants@6.5.10)(@pixi/extensions@6.5.10)(@pixi/math@6.5.10)(@pixi/runner@6.5.10)(@pixi/settings@6.5.10(@pixi/constants@6.5.10))(@pixi/ticker@6.5.10(@pixi/extensions@6.5.10)(@pixi/settings@6.5.10(@pixi/constants@6.5.10)))(@pixi/utils@6.5.10(@pixi/constants@6.5.10)(@pixi/settings@6.5.10(@pixi/constants@6.5.10))))(@pixi/display@6.5.10(@pixi/constants@6.5.10)(@pixi/math@6.5.10)(@pixi/settings@6.5.10(@pixi/constants@6.5.10))(@pixi/utils@6.5.10(@pixi/constants@6.5.10)(@pixi/settings@6.5.10(@pixi/constants@6.5.10))))(@pixi/graphics@6.5.10(vnjw7qx4yf6lp5siigycla6i5q))(@pixi/math@6.5.10)(@pixi/utils@6.5.10(@pixi/constants@6.5.10)(@pixi/settings@6.5.10(@pixi/constants@6.5.10)))
+      '@lumphammer/shared-fvtt-bits':
+        specifier: workspace:*
+        version: link:packages/shared-fvtt-bits
       '@tsconfig/recommended':
         specifier: ^1.0.1
         version: 1.0.7
@@ -305,7 +304,6 @@ packages:
 
   '@pixi/graphics-smooth@0.0.22':
     resolution: {integrity: sha512-qq2u+BJBIDBuuSTc2Xzm1D/8RiiKBdxnVDiMb7Go5v8achnV5ctC6m+rf8Mq0sWm66mbOqu1aq/9efT4A4sPrA==}
-    engines: {node: '>=14', npm: '>=7'}
     peerDependencies:
       '@pixi/constants': ^6.0.4
       '@pixi/core': ^6.0.4
