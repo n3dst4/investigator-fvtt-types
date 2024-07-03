@@ -1,6 +1,6 @@
 {
   "name": "@lumphammer/investigator-fvtt-types",
-  "version": "1.14.0-alpha",
+  "version": "1.14.0-alpha.2",
   "description": "",
   "exports": {
     ".": {
@@ -25,13 +25,12 @@
   "devDependencies": {
     "@emotion/react": "^11.11.4",
     "@league-of-foundry-developers/foundry-vtt-types": "^9.280.0",
+    "@lumphammer/shared-fvtt-bits": "workspace:*",
     "@tsconfig/recommended": "^1.0.1",
     "prettier": "^3.2.5",
     "typescript": "^5.4.4"
   },
-  "dependencies": {
-    "@lumphammer/shared-fvtt-bits": "workspace:*"
-  },
+  "dependencies": {},
   "pnpm": {
     "patchedDependencies": {
       "tinymce@5.10.1": "packages/shared-fvtt-bits/patches/tinymce@5.10.1.patch",
