@@ -31,12 +31,6 @@
     "typescript": "^5.4.4"
   },
   "dependencies": {},
-  "pnpm": {
-    "patchedDependencies": {
-      "tinymce@5.10.1": "packages/shared-fvtt-bits/patches/tinymce@5.10.1.patch",
-      "@league-of-foundry-developers/foundry-vtt-types@9.280.0": "packages/shared-fvtt-bits/patches/@league-of-foundry-developers__foundry-vtt-types@9.280.0.patch"
-    }
-  },
   "packageManager": "pnpm@9.4.0",
   "volta": {
     "pnpm": "9.4.0",
