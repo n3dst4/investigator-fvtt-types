@@ -1,5 +1,7 @@
 # @lumphammer/investigator-fvtt-types
 
+THIS REPOSITORY HAS BEEN RETIRED! It's now part of the main INVESTIGATOR codebase at https://github.com/n3dst4/gumshoe-fvtt/tree/main/packages/investigator-fvtt-types
+
 This package contains TypeScript types for people wishing to write custom addons for [INVESTIGATOR for Foundry VTT][investigator].
 
 Currently this includes types for
